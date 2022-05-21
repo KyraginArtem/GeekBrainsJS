@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  /**
+   * Функция суммирует заданные значения.
+   * @param {number} a Первое число, которое будет складываться в функции.
+   * @param {number} b Второе число, которое будет складываться в функции.
+   * @returns {number} Вернет число, получившееся в результате суммы двух чисел.
+   */
+   let summ = (a, b) => {return a + b}
+  
+  /**
+   * Функция возвращает разность заданных значений.
+   * @param {number} a Первое число
+   * @param {number} b Второе число
+   * @returns {number} Вернет число, получившееся в результате разности из большего числа 
+   * меньшего числа. Есди значеня переменных 'а' и 'b' равны вернет 0.
+   */
+  let difference = (a, b) => {
+    if(a < b){
+      return b - a;
+    } else if(a > b){
+      return a - b;
+    } else return 0;
+  }
+
+  /**
+   * Функция умножает заданные значения.
+   * @param {number} a Первое число, которое будет умножаться в функции.
+   * @param {number} b Второе число, которое будет умножаться в функции.
+   * @returns {number} Вернет число, получившееся в результате умножения двух чисел.
+   */
+  let multiplication = (a, b) => {return a * b}
+
+  /**
+   * Функция делит заданные значения.
+   * @param {number} a делимое.
+   * @param {number} b делитель.
+   * @returns {number} Вернет частное получившееся в результате деления чисел.
+   */
+  let division = (a, b) => {return a / b}
+
+  // function mathOperation(arg1, arg2, operation){
+  //   if (operation === '+') {
+  //     return summ(arg1, arg2);
+  //   } else if (operation === '-') {
+  //       return difference (arg1, arg2);
+  //   } else if (operation === '*') {
+  //       return multiplication (arg1, arg2);
+  //   } else if (operation === '/') {
+  //       return division (arg1, arg2);
+  //   } else return NaN;    
+  // }
+  
+  /**
+   * Функция определяет тип математического вычисления для аргументов arg1 и arg2 
+   * в зависимости от значения параметра operation и вызывает соответсвующую функцию.
+   * @param {number} arg1 первое число.
+   * @param {number} arg2 второе число.
+   * @param {string} operation тип математической операции.
+   * @returns {number} Вернет значение, получившееся в результате операции.
+   */
+  function mathOperation(arg1, arg2, operation){
+    switch(operation){
+      case "+": return summ(arg1, arg2);
+      case "-": return difference (arg1, arg2);
+      case "*": return multiplication (arg1, arg2);
+      case "/": return division (arg1, arg2);
+      default: return NaN;
+    }   
+  }
+
+  console.log(mathOperation(5, 8, "''"));
+</script>
+</body>
+</html>
