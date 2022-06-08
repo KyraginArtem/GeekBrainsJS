@@ -47,7 +47,7 @@
     /**
      * @returns {string} html-разметка для товара
      */
-    getProductMarkup() {
+    getProductMarkup(name, imageUrl, price, id) {
       return `
         <div class="product">
             <div>${name}</div>
@@ -77,13 +77,15 @@
     ],
   };
 
-  const productsEl = document.querySelector('products');
-  document.querySelector('header').addEventListener('click', event => {
-    if (event.target.classList.contains('.menuButton')) {
+  let productsEl = document.querySelector('.products');
+
+  document.body.addEventListener('click', event => {
+    if (!event.target.classList.contains('menuButton')) {
       return;
     }
     productsEl.innerHTML = products[event.target.dataset.type]
-      .map(product => product.getProductMarkup());
+    .map(product => product.getProductMarkup(product.name, product.imageUrl,
+      product.price, product.id));
   });
 
 </script>
