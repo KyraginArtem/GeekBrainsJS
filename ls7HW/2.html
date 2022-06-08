@@ -84,6 +84,8 @@
       return;
     }
     productsEl.innerHTML = products[event.target.dataset.type]
+    //я правильно понял что функция map перебирает каждый эл. 
+    //массива и передает содержимое в функцию?
     .map(product => product.getProductMarkup(product.name, product.imageUrl,
       product.price, product.id));
   });
