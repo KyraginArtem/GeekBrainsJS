@@ -63,13 +63,11 @@
   const navLinkEl = document.querySelectorAll('.nav-link');
   const divTextEl = document.querySelector('.text');
 
-  document.body.addEventListener('click', event => {
-    if(event.target.classList.contains('nav-link')) {
-      removeClassActiv();
-      event.target.classList.add('active');
-      divTextEl.textContent = 
-        panelText[event.target.parentElement.dataset.text];
-    }
+  document.querySelector('ul.nav-tabs').addEventListener('click', event => {
+    removeClassActiv();
+    event.target.classList.add('active');
+    divTextEl.textContent = 
+      panelText[event.target.parentElement.dataset.text];
   });
 
   function removeClassActiv() {
