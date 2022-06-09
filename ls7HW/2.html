@@ -79,10 +79,7 @@
 
   let productsEl = document.querySelector('.products');
 
-  document.body.addEventListener('click', event => {
-    if (!event.target.classList.contains('menuButton')) {
-      return;
-    }
+  document.querySelector('header').addEventListener('click', event => {
     productsEl.innerHTML = products[event.target.dataset.type]
     //я правильно понял что функция map перебирает каждый эл. 
     //массива и передает содержимое в функцию?
